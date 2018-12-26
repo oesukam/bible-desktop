@@ -6,9 +6,9 @@ versions (English, French, Lingala and Swahili)
 
 ```bash
 # Clone this repository
-git clone https://github.com/oesukam/bible-electron
+git clone https://github.com/oesukam/bible-desktop
 # Go into the repository
-cd bible-electron
+cd bible-desktop
 # Install dependencies
 npm install
 # Run the app

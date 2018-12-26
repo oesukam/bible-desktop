@@ -1,22 +1,36 @@
 // index.js
+const Store = require('../utils/store');
 const booksJSON = require('../mocks/books');
+const englishBibleJSON = require('../mocks/english_bible');
 const frenchBibleJSON = require('../mocks/french_bible');
+const lingalaBibleJSON = require('../mocks/lingala_bible');
+const swahiliBibleJSON = require('../mocks/swahili_bible');
 const books = Object.values(booksJSON);
 const booksNamesContainer = document.querySelector('#side-bar__books');
 const chaptersContainer = document.querySelector('#side-chapters>.chapters')
 const versesContainer = document.querySelector('.verses');
 const verseTitle = document.querySelector('.verse-title');
+const searchBook = document.querySelector('#search-books > .search-input');
 
-let selected = {
-  book: "1",
-  chapter: ""
-};
+store = new Store();
+const bibleMap = {
+  en: englishBibleJSON,
+  fr: frenchBibleJSON,
+  li: lingalaBibleJSON,
+  sw: swahiliBibleJSON,
+}
+let keywords = '';
 
+searchBook.addEventListener('input', (e) => {
+  const { value } = e.target;
+  loadBooks(value);
+})
 const loadBooks = (search = '') => {
+  keywords = search;
   booksNamesContainer.innerHTML =  books.map((val, index) => {
     const i = index + 1;
-    if (search) {
-      if (val.en.toLowerCase().includes(search.toLocaleLowerCase())) {
+    if (keywords) {
+      if (val.en.toLowerCase().includes(keywords.toLocaleLowerCase())) {
         return `<li data-index="${i}" class="side-bar__book">${val.en}</li>` 
       }
     } else {
@@ -28,14 +42,20 @@ const loadBooks = (search = '') => {
   bookElement.forEach((val) => {
     val.addEventListener('click', (e) => {
       const bookSelected = e.target.getAttribute('data-index') || '1';
-      selected.book = bookSelected;
-      loadVerses({ bookSelected });
+      store.set('book', bookSelected);
+      store.set('chapter', '1');
+      loadVerses({ bookSelected, loadChapters: true });
     })
   });
 }
 
-const loadVerses = ({ bookSelected = '1', chapterSelected = '1', loadChapters = false } = {}) => {
-  const book = frenchBibleJSON.books[bookSelected] || frenchBibleJSON.books['1'];
+const loadVerses = ({
+  bookSelected = store.get('book'),
+  chapterSelected = store.get('chapter'),
+  loadChapters = false
+} = {}) => {
+  const bible = bibleMap[store.get('bible') || 'fr'];
+  const book = bible.books[bookSelected] || bible.books['1'];
   const chapters = Object.keys(book.chapters) || [];
   verseTitle.innerHTML = `${book.book_name} ${chapterSelected}`;
   const verses = Object.values(book.chapters[chapterSelected] || book.chapters['1']);
@@ -49,6 +69,7 @@ const loadVerses = ({ bookSelected = '1', chapterSelected = '1', loadChapters = 
     chapterElement.forEach((val) => {
       val.addEventListener('click', (e) => {
         const selected = e.target.getAttribute('data-index') || '1';
+        store.set('chapter', selected);
         loadVerses({ chapterSelected: selected })
       });
     });
