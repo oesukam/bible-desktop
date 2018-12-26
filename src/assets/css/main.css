@@ -2,6 +2,9 @@
   font-family: "Montserrat";
   src: url("../fonts/Montserrat-Light.otf") format("truetype");
 }
+::-webkit-scrollbar { 
+  display: none; 
+}
 *{
   box-sizing: border-box;  
 }

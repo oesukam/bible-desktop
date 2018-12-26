@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   "1": {
     "en": "Genesis",
   },
