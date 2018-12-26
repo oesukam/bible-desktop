@@ -1,0 +1,28 @@
+.bible-name {
+  white-space: nowrap;
+  margin-right: 10px;
+}
+
+#search-content{
+  border-radius: 5px;
+  border: 1px solid #C3C3C3;
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px 5px;
+  color: #C3C3C3;
+  width: 400px;
+  max-width: 100%;
+}
+
+.search-input{
+  flex: 1;
+  outline: none;  
+  background-color: transparent;
+  border: none;
+  height: 30px;
+  padding: 0px 5px;  
+  font-size: 12px;
+}

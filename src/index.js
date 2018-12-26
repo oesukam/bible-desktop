@@ -1,2 +1,4 @@
-// index.js
-document.write('Hello World!')
+import bookController from './controllers/bookController.js';
+
+bookController.loadBooksNames();
+bookController.loadVerses();
