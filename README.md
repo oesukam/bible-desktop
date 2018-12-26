@@ -1,4 +1,6 @@
 # Bible
+A bible destop application in English and French with four different
+versions (English, French, Lingala and Swahili)
 
 ## To Use
 
