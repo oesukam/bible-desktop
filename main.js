@@ -15,7 +15,8 @@ const store = new Store({
     windowBounds,
     bible: 'fr',
     book: '1',
-    chapter: '1'
+    chapter: '1',
+    saved: {}
   }
 });
 

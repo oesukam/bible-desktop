@@ -5,9 +5,11 @@ const englishBibleJSON = require('../mocks/english_bible');
 const frenchBibleJSON = require('../mocks/french_bible');
 const lingalaBibleJSON = require('../mocks/lingala_bible');
 const swahiliBibleJSON = require('../mocks/swahili_bible');
+const formatDate = require('../utils/formatDate').getFormattedDate;
+const { showTagModel } = require('./tagController');
 const books = Object.values(booksJSON);
 const booksNamesContainer = document.querySelector('#side-bar__books');
-const chaptersContainer = document.querySelector('#side-chapters>.chapters')
+const chaptersContainer = document.querySelector('.side-chapters__list')
 const versesContainer = document.querySelector('.verses');
 const verseTitle = document.querySelector('.verse-title');
 const searchBook = document.querySelector('#search-books > .search-input');
@@ -65,7 +67,7 @@ const loadVerses = ({
       return `<li data-index="${i}" class="chapter">${val}</li>`
     }).join(' ');
   
-    const chapterElement = document.querySelectorAll('.chapters>.chapter') || [];
+    const chapterElement = document.querySelectorAll('.side-chapters__list > .chapter') || [];
     chapterElement.forEach((val) => {
       val.addEventListener('click', (e) => {
         const selected = e.target.getAttribute('data-index') || '1';
@@ -74,18 +76,48 @@ const loadVerses = ({
       });
     });
   }
+  favorites = store.get('favorites') || {};
 
-  versesContainer.innerHTML =  verses.map((val, index) => {
+  versesContainer.innerHTML = verses.map((val, index) => {
     const i = index + 1;
-    return `<li data-index="${i}" class="verse">${i}. ${val}</li>`
+    const book = store.get('book');
+    const chapter = store.get('chapter');
+    const verse = i;
+    const entry = `${book}-${chapter}-${verse}`;
+    return `
+      <li data-index="${i}" class="verse">
+        ${i}. ${val}
+        <button
+          class="verse-favorite fa fa-star${favorites[entry]? ' active': ''}"
+          data-index="${i}"
+        ></button>
+     </li>
+    `
   }).join(' ');
 
-  // const verseElement = document.querySelectorAll('.verse') || [];
-  // verseElement.forEach((val) => {
-  //   val.addEventListener('click', (e) => {
-  //     console.log(e, e.target.getAttribute('data-index'), 'clicked')
-  //   })
-  // })
+  const verseFavorites = document.querySelectorAll('.verse-favorite') || [];
+  verseFavorites.forEach((val) => {
+    val.addEventListener('click', (e) => {
+      showTagModel();
+      const book = store.get('book');
+      const chapter = store.get('chapter');
+      const verse = e.target.getAttribute('data-index');
+      favorites = store.get('favorites') || {};
+      const index = `${book}-${chapter}-${verse}`;
+      if (e.target.classList.contains('active')) {
+        if (favorites[index]) {
+          delete favorites[index];
+          store.set('favorites', favorites);
+        }
+        e.target.classList.remove('active');
+         
+      } else {
+        favorites[index] = { tag: '', date: formatDate(new Date()) };
+        store.set('favorites', favorites);
+        e.target.classList.add('active');
+      }
+    })
+  })
 }
 
 
