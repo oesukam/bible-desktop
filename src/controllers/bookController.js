@@ -29,14 +29,15 @@ searchBook.addEventListener('input', (e) => {
 })
 const loadBooks = (search = '') => {
   keywords = search;
+  const lang = store.get('lang') || 'fr';
   booksNamesContainer.innerHTML =  books.map((val, index) => {
     const i = index + 1;
     if (keywords) {
       if (val.en.toLowerCase().includes(keywords.toLocaleLowerCase())) {
-        return `<li data-index="${i}" class="side-bar__book">${val.en}</li>` 
+        return `<li data-index="${i}" class="side-bar__book">${val[lang] || val.fr}</li>` 
       }
     } else {
-      return `<li data-index="${i}" class="side-bar__book">${val.en}</li>`
+      return `<li data-index="${i}" class="side-bar__book">${val[lang] || val.fr}</li>`
     }
   }).join(' ');
 
