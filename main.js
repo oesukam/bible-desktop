@@ -12,10 +12,12 @@ const windowBounds = {
 const store = new Store({
   configName: 'user-preferences',
   defaults: {
+    lang: 'fr',
     windowBounds,
     bible: 'fr',
     book: '1',
-    chapter: '1'
+    chapter: '1',
+    saved: {}
   }
 });
 

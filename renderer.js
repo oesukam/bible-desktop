@@ -5,3 +5,4 @@ const bookController = require('./src/controllers/bookController.js');
 
 bookController.loadBooks();
 bookController.loadVerses({ loadChapters: true });
+

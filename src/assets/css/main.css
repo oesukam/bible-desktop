@@ -22,6 +22,10 @@ body{
   color: inherit;
 }
 
+button {
+  outline: none;
+  border: none;
+}
 
 #top-bar, #main{
   position: absolute;
@@ -88,3 +92,26 @@ body{
   font-size: 16px;
   margin-bottom: 15px;
 }
+.verse-favorite, .verse-tag {
+  position: relative;
+  font-size: 18px;
+  color: rgba(0,0,0,0.4);
+}
+.verse-favorite:active {
+  color: red;
+  box-shadow: 2px 0px rgba(0,0,0,0.4);
+}
+.verse-favorite:hover {
+  color: rgb(209, 209, 0);
+}
+.verse-favorite.active{
+  color: green;
+}
+.verse-tag {
+  visibility: hidden;
+}
+
+.verse-favorite.active + .verse-tag {
+  visibility: visible;
+}
+
