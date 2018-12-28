@@ -92,11 +92,10 @@ button {
   font-size: 16px;
   margin-bottom: 15px;
 }
-.verse-favorite {
+.verse-favorite, .verse-tag {
   position: relative;
-  font-size: 20px;
+  font-size: 18px;
   color: rgba(0,0,0,0.4);
-
 }
 .verse-favorite:active {
   color: red;
@@ -107,5 +106,12 @@ button {
 }
 .verse-favorite.active{
   color: green;
+}
+.verse-tag {
+  visibility: hidden;
+}
+
+.verse-favorite.active + .verse-tag {
+  visibility: visible;
 }
 

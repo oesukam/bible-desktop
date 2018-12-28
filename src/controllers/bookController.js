@@ -90,6 +90,12 @@ const loadVerses = ({
         <button
           class="verse-favorite fa fa-star${favorites[entry]? ' active': ''}"
           data-index="${i}"
+          data-entry="${entry}"
+        ></button>
+        <button
+          class="verse-tag fa fa-tags"
+          data-index="${i}"
+          onclick="verseTagClicked('${entry}')"
         ></button>
      </li>
     `
@@ -98,12 +104,8 @@ const loadVerses = ({
   const verseFavorites = document.querySelectorAll('.verse-favorite') || [];
   verseFavorites.forEach((val) => {
     val.addEventListener('click', (e) => {
-      showTagModel();
-      const book = store.get('book');
-      const chapter = store.get('chapter');
-      const verse = e.target.getAttribute('data-index');
+      const index = e.target.getAttribute('data-entry');
       favorites = store.get('favorites') || {};
-      const index = `${book}-${chapter}-${verse}`;
       if (e.target.classList.contains('active')) {
         if (favorites[index]) {
           delete favorites[index];
@@ -112,12 +114,17 @@ const loadVerses = ({
         e.target.classList.remove('active');
          
       } else {
-        favorites[index] = { tag: '', date: formatDate(new Date()) };
+        favorites[index] = { tags: [], date: formatDate(new Date()) };
         store.set('favorites', favorites);
+        showTagModel(index);
         e.target.classList.add('active');
       }
     })
   })
+}
+
+window.verseTagClicked = function (entry) {
+  showTagModel(entry);
 }
 
 
