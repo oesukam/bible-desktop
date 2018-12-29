@@ -1,5 +1,6 @@
 // Modules to control application life and create native browser window
-const {app, BrowserWindow} = require('electron')
+const {app, BrowserWindow, Menu } = require('electron');
+const menuTemplate = require('./src/utils/menuTemplate');
 const Store = require('./src/utils/store');
 
 const windowBounds = {
@@ -42,6 +43,8 @@ function createWindow () {
   // and load the index.html of the app.
   mainWindow.loadFile('index.html');
 
+  const menu = Menu.buildFromTemplate(menuTemplate)
+  Menu.setApplicationMenu(menu)
   // mainWindow.on('ready-to-show', () => {
   //   mainWindow.show();
   // });
