@@ -9,24 +9,43 @@ const windowBounds = {
   transparent: true,
   titleBarStyle: 'hidden'
 };
-// initialize the store
-const store = new Store({
-  configName: 'user-preferences',
-  defaults: {
-    lang: 'fr',
-    windowBounds,
-    bible: 'french_bible',
-    book: '1',
-    chapter: '1',
-    saved: {}
-  }
-});
+
+let store = new Store();
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow
 
 function createWindow () {
+  // initialize the store
+  let lang = store.get('lang');
+  console.log('lang', lang)
+  if (!lang) {
+    lang = app.getLocale();
+    lang = lang.replace(/-\S+/g, '');
+    console.log(lang)
+    if (lang === 'en') {
+      lang = 'en'
+      store.set('lang', 'en');
+      store.set('bible', 'english_bible');
+    } else {
+      lang = 'fr'
+      store.set('lang', 'fr');
+      store.set('bible', 'french_bible');
+    }
+    store.set('book', '1');
+    store.set('chapter', '1');
+
+    store = new Store({
+      configName: 'user-preferences',
+      defaults: {
+        lang,
+        windowBounds,
+        saved: {}
+      }
+    });
+  }
+  
   // Create the browser window.
   mainWindow = new BrowserWindow({
     ...windowBounds,
@@ -64,7 +83,7 @@ function createWindow () {
     // in an array if your app supports multi windows, this is the time
     // when you should delete the corresponding element.
     mainWindow = null
-  })
+  });
 }
 
 // This method will be called when Electron has finished
