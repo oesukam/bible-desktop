@@ -1,398 +1,398 @@
 module.exports = {
   "1": {
-    "fr": "Genèse",
-    "en": "Genesis",
-    "li": "Ebandeli",
-    "sw": "Mwanzo"
+    "french_bible": "Genèse",
+    "english_bible": "Genesis",
+    "lingala_bible": "Ebandeli",
+    "swahili_bible": "Mwanzo"
   },
   "2": {
-    "fr": "Exode",
-    "en": "Exodus",
-    "li": "Kobima",
-    "sw": "Kutoka"
+    "french_bible": "Exode",
+    "english_bible": "Exodus",
+    "lingala_bible": "Kobima",
+    "swahili_bible": "Kutoka"
   },
   "3": {
-    "fr": "Lévitique",
-    "en": "Leviticus",
-    "li": "Balevi",
-    "sw": "Mambo ya Walawi"
+    "french_bible": "Lévitique",
+    "english_bible": "Leviticus",
+    "lingala_bible": "Balevi",
+    "swahili_bible": "Mambo ya Walawi"
   },
   "4": {
-    "fr": "Nombres",
-    "en": "Numbers",
-    "li": "Mitángo",
-    "sw": "Hesabu"
+    "french_bible": "Nombres",
+    "english_bible": "Numbers",
+    "lingala_bible": "Mitángo",
+    "swahili_bible": "Hesabu"
   },
   "5": {
-    "fr": "Deutéronome",
-    "en": "Deuteronomy",
-    "li": "Kolimbola Mibeko",
-    "sw": "Kumbukumbu la Torati"
+    "french_bible": "Deutéronome",
+    "english_bible": "Deuteronomy",
+    "lingala_bible": "Kolimbola Mibeko",
+    "swahili_bible": "Kumbukumbu la Torati"
   },
   "6": {
-    "fr": "Josué",
-    "en": "Joshua",
-    "li": "Yosua",
-    "sw": "Yoshua"
+    "french_bible": "Josué",
+    "english_bible": "Joshua",
+    "lingala_bible": "Yosua",
+    "swahili_bible": "Yoshua"
   },
   "7": {
-    "fr": "Juges",
-    "en": "Judges",
-    "li": "Basambisi",
-    "sw": "Waamuzi"
+    "french_bible": "Juges",
+    "english_bible": "Judges",
+    "lingala_bible": "Basambisi",
+    "swahili_bible": "Waamuzi"
   },
   "8": {
-    "fr": "Ruth",
-    "en": "Ruth",
-    "li": "Ruta",
-    "sw": "Ruthu"
+    "french_bible": "Ruth",
+    "english_bible": "Ruth",
+    "lingala_bible": "Ruta",
+    "swahili_bible": "Ruthu"
   },
   "9": {
-    "fr": "1 Samuel",
-    "en": "1 Samuel",
-    "li": "1 Samwele",
-    "sw": "1 Samweli"
+    "french_bible": "1 Samuel",
+    "english_bible": "1 Samuel",
+    "lingala_bible": "1 Samwele",
+    "swahili_bible": "1 Samweli"
   },
   "10": {
-    "fr": "2 Samuel",
-    "en": "2 Samuel",
-    "li": "2 Samwele",
-    "sw": "2 Samweli"
+    "french_bible": "2 Samuel",
+    "english_bible": "2 Samuel",
+    "lingala_bible": "2 Samwele",
+    "swahili_bible": "2 Samweli"
   },
   "11": {
-    "fr": "1 Rois",
-    "en": "1 Kings",
-    "li": "1 Bakonzi",
-    "sw": "1 Wafalme"
+    "french_bible": "1 Rois",
+    "english_bible": "1 Kings",
+    "lingala_bible": "1 Bakonzi",
+    "swahili_bible": "1 Wafalme"
   },
   "12": {
-    "fr": "2 Rois",
-    "en": "2 Kings",
-    "li": "2 Bakonzi",
-    "sw": "2 Wafalme"
+    "french_bible": "2 Rois",
+    "english_bible": "2 Kings",
+    "lingala_bible": "2 Bakonzi",
+    "swahili_bible": "2 Wafalme"
   },
   "13": {
-    "fr": "1 Chroniques",
-    "en": "1 Chronicles",
-    "li": "1 Ntango",
-    "sw": "1 Mambo ya Nyakati"
+    "french_bible": "1 Chroniques",
+    "english_bible": "1 Chronicles",
+    "lingala_bible": "1 Ntango",
+    "swahili_bible": "1 Mambo ya Nyakati"
   },
   "14": {
-    "fr": "2 Chroniques",
-    "en": "2 Chronicles",
-    "li": "2 Ntango",
-    "sw": "2 Mambo ya Nyakati"
+    "french_bible": "2 Chroniques",
+    "english_bible": "2 Chronicles",
+    "lingala_bible": "2 Ntango",
+    "swahili_bible": "2 Mambo ya Nyakati"
   },
   "15": {
-    "fr": "Ezra",
-    "en": "Ezra",
-    "li": "Ezera",
-    "sw": "Ezra"
+    "french_bible": "Ezra",
+    "english_bible": "Ezra",
+    "lingala_bible": "Ezera",
+    "swahili_bible": "Ezra"
   },
   "16": {
-    "fr": "Nehémia",
-    "en": "Nehemiah",
-    "li": "Nehemia",
-    "sw": "Nehemia"
+    "french_bible": "Nehémia",
+    "english_bible": "Nehemiah",
+    "lingala_bible": "Nehemia",
+    "swahili_bible": "Nehemia"
   },
   "17": {
-    "fr": "Esther",
-    "en": "Esther",
-    "li": "Estere",
-    "sw": "Esta"
+    "french_bible": "Esther",
+    "english_bible": "Esther",
+    "lingala_bible": "Estere",
+    "swahili_bible": "Esta"
   },
   "18": {
-    "fr": "Job",
-    "en": "Job",
-    "li": "Yobo",
-    "sw": "Ayubu"
+    "french_bible": "Job",
+    "english_bible": "Job",
+    "lingala_bible": "Yobo",
+    "swahili_bible": "Ayubu"
   },
   "19": {
-    "fr": "Psaumes",
-    "en": "Psalm",
-    "li": "Nzembo",
-    "sw": "Zaburi"
+    "french_bible": "Psaumes",
+    "english_bible": "Psalm",
+    "lingala_bible": "Nzembo",
+    "swahili_bible": "Zaburi"
   },
   "20": {
-    "fr": "Proverbes",
-    "en": "Proverbs",
-    "li": "Masese",
-    "sw": "Methali"
+    "french_bible": "Proverbes",
+    "english_bible": "Proverbs",
+    "lingala_bible": "Masese",
+    "swahili_bible": "Methali"
   },
   "21": {
-    "fr": "Ecclésiaste",
-    "en": "Ecclesiastes",
-    "li": "Mosakoli",
-    "sw": "Mhubiri"
+    "french_bible": "Ecclésiaste",
+    "english_bible": "Ecclesiastes",
+    "lingala_bible": "Mosakoli",
+    "swahili_bible": "Mhubiri"
   },
   "22": {
-    "fr": "Chant de Salomon (Cantiques)",
-    "en": "Song of Solomon",
-    "li": "Loyembo ya Solomon",
-    "sw": "Wimbo wa Sulemani"
+    "french_bible": "Chant de Salomon (Cantiques)",
+    "english_bible": "Song of Solomon",
+    "lingala_bible": "Loyembo ya Solomon",
+    "swahili_bible": "Wimbo wa Sulemani"
   },
   "23": {
-    "fr": "Isaïe",
-    "en": "Isaiah",
-    "li": "Yisaya",
-    "sw": "Isaya"
+    "french_bible": "Isaïe",
+    "english_bible": "Isaiah",
+    "lingala_bible": "Yisaya",
+    "swahili_bible": "Isaya"
   },
   "24": {
-    "fr": "Jérémie",
-    "en": "Jeremiah",
-    "li": "Yirimia",
-    "sw": "Yeremia"
+    "french_bible": "Jérémie",
+    "english_bible": "Jeremiah",
+    "lingala_bible": "Yirimia",
+    "swahili_bible": "Yeremia"
   },
   "25": {
-    "fr": "Lamentations",
-    "en": "Lamentations",
-    "li": "Bileli",
-    "sw": "Maombolezo"
+    "french_bible": "Lamentations",
+    "english_bible": "Lamentations",
+    "lingala_bible": "Bileli",
+    "swahili_bible": "Maombolezo"
   },
   "26": {
-    "fr": "Ezéchiel",
-    "en": "Ezekiel",
-    "li": "Ezekiele",
-    "sw": "Ezekieli"
+    "french_bible": "Ezéchiel",
+    "english_bible": "Ezekiel",
+    "lingala_bible": "Ezekiele",
+    "swahili_bible": "Ezekieli"
   },
   "27": {
-    "fr": "Daniel",
-    "en": "Daniel",
-    "li": "Danyele",
-    "sw": "Danyeli"
+    "french_bible": "Daniel",
+    "english_bible": "Daniel",
+    "lingala_bible": "Danyele",
+    "swahili_bible": "Danyeli"
   },
   "28": {
-    "fr": "Hoshéa",
-    "en": "Hosea",
-    "li": "Hosea",
-    "sw": "Hosea"
+    "french_bible": "Hoshéa",
+    "english_bible": "Hosea",
+    "lingala_bible": "Hosea",
+    "swahili_bible": "Hosea"
   },
   "29": {
-    "fr": "Yoël",
-    "en": "Joel",
-    "li": "Yoele",
-    "sw": "Yoeli"
+    "french_bible": "Yoël",
+    "english_bible": "Joel",
+    "lingala_bible": "Yoele",
+    "swahili_bible": "Yoeli"
   },
   "30": {
-    "fr": "Amos",
-    "en": "Amos",
-    "li": "Amose",
-    "sw": "Amosi"
+    "french_bible": "Amos",
+    "english_bible": "Amos",
+    "lingala_bible": "Amose",
+    "swahili_bible": "Amosi"
   },
   "31": {
-    "fr": "Obadia",
-    "en": "Obadiah",
-    "li": "Obadia",
-    "sw": "Obadia"
+    "french_bible": "Obadia",
+    "english_bible": "Obadiah",
+    "lingala_bible": "Obadia",
+    "swahili_bible": "Obadia"
   },
   "32": {
-    "fr": "Yona",
-    "en": "Jonah",
-    "li": "Yona",
-    "sw": "Yona"
+    "french_bible": "Yona",
+    "english_bible": "Jonah",
+    "lingala_bible": "Yona",
+    "swahili_bible": "Yona"
   },
   "33": {
-    "fr": "Mika",
-    "en": "Micah",
-    "li": "Mika",
-    "sw": "Mika"
+    "french_bible": "Mika",
+    "english_bible": "Micah",
+    "lingala_bible": "Mika",
+    "swahili_bible": "Mika"
   },
   "34": {
-    "fr": "Nahoum",
-    "en": "Nahum",
-    "li": "Nahumu",
-    "sw": "Nahumu"
+    "french_bible": "Nahoum",
+    "english_bible": "Nahum",
+    "lingala_bible": "Nahumu",
+    "swahili_bible": "Nahumu"
   },
   "35": {
-    "fr": "Habaqouq",
-    "en": "Habakkuk",
-    "li": "Habakuku",
-    "sw": "Habakuki"
+    "french_bible": "Habaqouq",
+    "english_bible": "Habakkuk",
+    "lingala_bible": "Habakuku",
+    "swahili_bible": "Habakuki"
   },
   "36": {
-    "fr": "Tsephania",
-    "en": "Zephaniah",
-    "li": "Sefania",
-    "sw": "Sefania"
+    "french_bible": "Tsephania",
+    "english_bible": "Zephaniah",
+    "lingala_bible": "Sefania",
+    "swahili_bible": "Sefania"
   },
   "37": {
-    "fr": "Haggaï",
-    "en": "Haggai",
-    "li": "Hagai",
-    "sw": "Hagai"
+    "french_bible": "Haggaï",
+    "english_bible": "Haggai",
+    "lingala_bible": "Hagai",
+    "swahili_bible": "Hagai"
   },
   "38": {
-    "fr": "Zekaria",
-    "en": "Zechariah",
-    "li": "Zekaria",
-    "sw": "Zekaria"
+    "french_bible": "Zekaria",
+    "english_bible": "Zechariah",
+    "lingala_bible": "Zekaria",
+    "swahili_bible": "Zekaria"
   },
   "39": {
-    "fr": "Malaki",
-    "en": "Malachi",
-    "li": "Malaki",
-    "sw": "Malaki"
+    "french_bible": "Malaki",
+    "english_bible": "Malachi",
+    "lingala_bible": "Malaki",
+    "swahili_bible": "Malaki"
   },
   "40": {
-    "fr": "Matthieu",
-    "en": "Matthew",
-    "li": "Matai",
-    "sw": "Mathayo"
+    "french_bible": "Matthieu",
+    "english_bible": "Matthew",
+    "lingala_bible": "Matai",
+    "swahili_bible": "Mathayo"
   },
   "41": {
-    "fr": "Marc",
-    "en": "Mark",
-    "li": "Marko",
-    "sw": "Marko"
+    "french_bible": "Marc",
+    "english_bible": "Mark",
+    "lingala_bible": "Marko",
+    "swahili_bible": "Marko"
   },
   "42": {
-    "fr": "Luc",
-    "en": "Luke",
-    "li": "Luka",
-    "sw": "Luka"
+    "french_bible": "Luc",
+    "english_bible": "Luke",
+    "lingala_bible": "Luka",
+    "swahili_bible": "Luka"
   },
   "43": {
-    "fr": "Jean",
-    "en": "John",
-    "li": "Yoane",
-    "sw": "Yohane"
+    "french_bible": "Jean",
+    "english_bible": "John",
+    "lingala_bible": "Yoane",
+    "swahili_bible": "Yohane"
   },
   "44": {
-    "fr": "Actes",
-    "en": "Acts",
-    "li": "Misala",
-    "sw": "Matendo"
+    "french_bible": "Actes",
+    "english_bible": "Acts",
+    "lingala_bible": "Misala",
+    "swahili_bible": "Matendo"
   },
   "45": {
-    "fr": "Romains",
-    "en": "Romans",
-    "li": "Baroma",
-    "sw": "Waroma"
+    "french_bible": "Romains",
+    "english_bible": "Romans",
+    "lingala_bible": "Baroma",
+    "swahili_bible": "Waroma"
   },
   "46": {
-    "fr": "1 Corinthiens",
-    "en": "1 Corinthians",
-    "li": "1 Bakorinti",
-    "sw": "1 Wakorintho"
+    "french_bible": "1 Corinthiens",
+    "english_bible": "1 Corinthians",
+    "lingala_bible": "1 Bakorinti",
+    "swahili_bible": "1 Wakorintho"
   },
   "47": {
-    "fr": "2 Corinthiens",
-    "en": "2 Corinthians",
-    "li": "2 Bakorinti",
-    "sw": "2 Wakorintho"
+    "french_bible": "2 Corinthiens",
+    "english_bible": "2 Corinthians",
+    "lingala_bible": "2 Bakorinti",
+    "swahili_bible": "2 Wakorintho"
   },
   "48": {
-    "fr": "Galates",
-    "en": "Galatians",
-    "li": "Bagalatia",
-    "sw": "Wagalatia"
+    "french_bible": "Galates",
+    "english_bible": "Galatians",
+    "lingala_bible": "Bagalatia",
+    "swahili_bible": "Wagalatia"
   },
   "49": {
-    "fr": "Ephésiens",
-    "en": "Ephesians",
-    "li": "Baefese",
-    "sw": "Waefeso"
+    "french_bible": "Ephésiens",
+    "english_bible": "Ephesians",
+    "lingala_bible": "Baefese",
+    "swahili_bible": "Waefeso"
   },
   "50": {
-    "fr": "Philippiens",
-    "en": "Philippians",
-    "li": "Bafilipi",
-    "sw": "Wafilipi"
+    "french_bible": "Philippiens",
+    "english_bible": "Philippians",
+    "lingala_bible": "Bafilipi",
+    "swahili_bible": "Wafilipi"
   },
   "51": {
-    "fr": "Colossiens",
-    "en": "Colossians",
-    "li": "Bakolose",
-    "sw": "Wakolosai"
+    "french_bible": "Colossiens",
+    "english_bible": "Colossians",
+    "lingala_bible": "Bakolose",
+    "swahili_bible": "Wakolosai"
   },
   "52": {
-    "fr": "1 Thessaloniens",
-    "en": "1 Thessalonians",
-    "li": "1 Batesaloniki",
-    "sw": "1 Wathesalonike"
+    "french_bible": "1 Thessaloniens",
+    "english_bible": "1 Thessalonians",
+    "lingala_bible": "1 Batesaloniki",
+    "swahili_bible": "1 Wathesalonike"
   },
   "53": {
-    "fr": "2 Thessaloniens",
-    "en": "2 Thessalonians",
-    "li": "2 Batesaloniki",
-    "sw": "2 Wathesalonike"
+    "french_bible": "2 Thessaloniens",
+    "english_bible": "2 Thessalonians",
+    "lingala_bible": "2 Batesaloniki",
+    "swahili_bible": "2 Wathesalonike"
   },
   "54": {
-    "fr": "1 Timothée",
-    "en": "1 Timothy",
-    "li": "1 Timote",
-    "sw": "1 Timotheo"
+    "french_bible": "1 Timothée",
+    "english_bible": "1 Timothy",
+    "lingala_bible": "1 Timote",
+    "swahili_bible": "1 Timotheo"
   },
   "55": {
-    "fr": "2 Timothée",
-    "en": "2 Timothy",
-    "li": "2 Timote",
-    "sw": "2 Timotheo"
+    "french_bible": "2 Timothée",
+    "english_bible": "2 Timothy",
+    "lingala_bible": "2 Timote",
+    "swahili_bible": "2 Timotheo"
   },
   "56": {
-    "fr": "Tite",
-    "en": "Titus",
-    "li": "Tito",
-    "sw": "Tito"
+    "french_bible": "Tite",
+    "english_bible": "Titus",
+    "lingala_bible": "Tito",
+    "swahili_bible": "Tito"
   },
   "57": {
-    "fr": "Philémon",
-    "en": "Philemon",
-    "li": "Filemo",
-    "sw": "Filemoni"
+    "french_bible": "Philémon",
+    "english_bible": "Philemon",
+    "lingala_bible": "Filemo",
+    "swahili_bible": "Filemoni"
   },
   "58": {
-    "fr": "Hébreux",
-    "en": "Hebrews",
-    "li": "Baebre",
-    "sw": "Waebrania"
+    "french_bible": "Hébreux",
+    "english_bible": "Hebrews",
+    "lingala_bible": "Baebre",
+    "swahili_bible": "Waebrania"
   },
   "59": {
-    "fr": "Jacques",
-    "en": "James",
-    "li": "Yakobo",
-    "sw": "Yakobo"
+    "french_bible": "Jacques",
+    "english_bible": "James",
+    "lingala_bible": "Yakobo",
+    "swahili_bible": "Yakobo"
   },
   "60": {
-    "fr": "1 Pierre",
-    "en": "1 Peter",
-    "li": "1 Petro",
-    "sw": "1 Petro"
+    "french_bible": "1 Pierre",
+    "english_bible": "1 Peter",
+    "lingala_bible": "1 Petro",
+    "swahili_bible": "1 Petro"
   },
   "61": {
-    "fr": "2 Pierre",
-    "en": "2 Peter",
-    "li": "2 Petro",
-    "sw": "2 Petro"
+    "french_bible": "2 Pierre",
+    "english_bible": "2 Peter",
+    "lingala_bible": "2 Petro",
+    "swahili_bible": "2 Petro"
   },
   "62": {
-    "fr": "1 Jean",
-    "en": "1 John",
-    "li": "1 Yoane",
-    "sw": "1 Yohana"
+    "french_bible": "1 Jean",
+    "english_bible": "1 John",
+    "lingala_bible": "1 Yoane",
+    "swahili_bible": "1 Yohana"
   },
   "63": {
-    "fr": "2 Jean",
-    "en": "2 John",
-    "li": "2 Yoane",
-    "sw": "2 Yohana"
+    "french_bible": "2 Jean",
+    "english_bible": "2 John",
+    "lingala_bible": "2 Yoane",
+    "swahili_bible": "2 Yohana"
   },
   "64": {
-    "fr": "3 Jean",
-    "en": "3 John",
-    "li": "3 Yoane",
-    "sw": "3 Yohana"
+    "french_bible": "3 Jean",
+    "english_bible": "3 John",
+    "lingala_bible": "3 Yoane",
+    "swahili_bible": "3 Yohana"
   },
   "65": {
-    "fr": "Jude",
-    "en": "Jude",
-    "li": "Yuda",
-    "sw": "Yuda"
+    "french_bible": "Jude",
+    "english_bible": "Jude",
+    "lingala_bible": "Yuda",
+    "swahili_bible": "Yuda"
   },
   "66": {
-    "fr": "Révélation",
-    "en": "Revelation",
-    "li": "Emoniseli",
-    "sw": "Ufunuo"
+    "french_bible": "Révélation",
+    "english_bible": "Revelation",
+    "lingala_bible": "Emoniseli",
+    "swahili_bible": "Ufunuo"
   }
 }
