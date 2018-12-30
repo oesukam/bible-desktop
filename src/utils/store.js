@@ -7,7 +7,7 @@ const path = require('path');
 const fs = require('fs');
 
 class Store {
-  constructor({ configName = 'user-preferences', defaults = '' } = {}) {
+  constructor({ configName = 'user-preferences', defaults = {} } = {}) {
     // renderer has to get `app` module via remote, main gets it directly
     const userDataPath = (electron.app || electron.remote.app).getPath('userData');
     this.path = path.join(userDataPath, configName + '.json');

@@ -24,7 +24,7 @@ const loadBooks = (search = '') => {
   booksNamesContainer.innerHTML =  books.map((val, index) => {
     const i = index + 1;
     if (keywords) {
-      if (val.en.toLowerCase().includes(keywords.toLocaleLowerCase())) {
+      if (val[bible].toLowerCase().includes(keywords.toLocaleLowerCase())) {
         return `<li data-index="${i}" class="side-bar__book">${val[bible] || val.french_bible}</li>` 
       }
     } else {
@@ -45,7 +45,7 @@ const loadBooks = (search = '') => {
 
 const loadVerses = ({
   bookSelected = store.get('book'),
-  chapterSelected = store.get('chapter'),
+  chapterSelected = store.get('chapter') || '1',
   loadChapters = false
 } = {}) => {
 store = new Store();
