@@ -1,26 +1,16 @@
 // index.js
 const Store = require('../utils/store');
 const booksJSON = require('../mocks/books');
-const englishBibleJSON = require('../mocks/english_bible');
-const frenchBibleJSON = require('../mocks/french_bible');
-const lingalaBibleJSON = require('../mocks/lingala_bible');
-const swahiliBibleJSON = require('../mocks/swahili_bible');
 const formatDate = require('../utils/formatDate').getFormattedDate;
 const { showTagModel } = require('./tagController');
 const books = Object.values(booksJSON);
+const bibleName = document.querySelector('.bible-name');
 const booksNamesContainer = document.querySelector('#side-bar__books');
 const chaptersContainer = document.querySelector('.side-chapters__list')
 const versesContainer = document.querySelector('.verses');
 const verseTitle = document.querySelector('.verse-title');
 const searchBook = document.querySelector('#search-books > .search-input');
 
-store = new Store();
-const bibleMap = {
-  en: englishBibleJSON,
-  fr: frenchBibleJSON,
-  li: lingalaBibleJSON,
-  sw: swahiliBibleJSON,
-}
 let keywords = '';
 
 searchBook.addEventListener('input', (e) => {
@@ -29,15 +19,16 @@ searchBook.addEventListener('input', (e) => {
 })
 const loadBooks = (search = '') => {
   keywords = search;
-  const lang = store.get('lang') || 'fr';
+  store = new Store();
+  const bible = store.get('bible') || 'french_bible';
   booksNamesContainer.innerHTML =  books.map((val, index) => {
     const i = index + 1;
     if (keywords) {
       if (val.en.toLowerCase().includes(keywords.toLocaleLowerCase())) {
-        return `<li data-index="${i}" class="side-bar__book">${val[lang] || val.fr}</li>` 
+        return `<li data-index="${i}" class="side-bar__book">${val[bible] || val.french_bible}</li>` 
       }
     } else {
-      return `<li data-index="${i}" class="side-bar__book">${val[lang] || val.fr}</li>`
+      return `<li data-index="${i}" class="side-bar__book">${val[bible] || val.french_bible}</li>`
     }
   }).join(' ');
 
@@ -57,12 +48,16 @@ const loadVerses = ({
   chapterSelected = store.get('chapter'),
   loadChapters = false
 } = {}) => {
-  const bible = bibleMap[store.get('bible') || 'fr'];
+store = new Store();
+  const defaultBible = '../mocks/french_bible';
+  const bible = require(`../mocks/${store.get('bible')}`) || require(defaultBible);
   const book = bible.books[bookSelected] || bible.books['1'];
   const chapters = Object.keys(book.chapters) || [];
   verseTitle.innerHTML = `${book.book_name} ${chapterSelected}`;
   const verses = Object.values(book.chapters[chapterSelected] || book.chapters['1']);
   if (loadChapters) {
+    bibleName.innerHTML = bible.bible_name;
+    store.set('bibleName', bible.bible_name);
     chaptersContainer.innerHTML =  chapters.map((val, index) => {
       const i = index + 1;
       return `<li data-index="${i}" class="chapter">${val}</li>`

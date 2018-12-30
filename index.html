@@ -48,7 +48,47 @@
         <li class="verse">4. And when the time was that Elkanah offered, he gave to Peninnah his wife, and to all her sons and her daughters, portions:</li>
       </ul>
     </div>
-
+    <div class="settings-model">
+      <div class="header">
+        <h3 class="header-title">Settings</h3>
+        <span class="close-model"></span>
+      </div>
+      <div class="content">
+        <table>
+            <tbody>
+              <tr>
+                <td>Language</td>
+                <td>
+                  <span class="custom-dropdown">
+                    <select id="language">
+                      <option value="fr">Francais</option>
+                      <option value="en">English</option>
+                    </select>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>Bible - Version</td>
+                <td>
+                  <span class="custom-dropdown">
+                    <select id="bible">
+                      <option value="french_bible">Francais - Bible</option>
+                      <option value="english_bible">English - Bible</option>
+                      <option value="swahili_bible">Swahili - Bible</option>
+                      <option value="lingala_bible">Lingala - Bible</option>
+                    </select>
+                  </span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        <div class="actions">
+          <button class="btn-cancel">Cancel</button>
+          <div class="separator"></div>
+          <button class="btn-save">Save</button>
+        </div>
+      </div>
+    </div>
     <script>
       // You can also require other files to run in this process
       require('./renderer.js')

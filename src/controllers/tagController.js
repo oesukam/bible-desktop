@@ -1,6 +1,6 @@
-const electron = require('electron');
+const { BrowserWindow } = require('electron');
 const path = require('path');
-const BrowserWindow = electron.remote.BrowserWindow;
+// const BrowserWindow = electron.remote.BrowserWindow;
 
 const showTagModel = (entry = '') => {
   let win = new BrowserWindow({
@@ -13,8 +13,7 @@ const showTagModel = (entry = '') => {
   })
   win.loadURL(`file://${__dirname}/../templates/tagModel.html?entry=${entry}`)
   win.on('close', function () { win = null })
-  win.webContents.send('store-data', 'helo');
-  win.show()
+  win.show();
 }
 
 module.exports = {

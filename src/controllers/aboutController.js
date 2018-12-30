@@ -4,15 +4,17 @@ const path = require('path');
 
 const show = () => {
   let win = new BrowserWindow({
-    frame: false, 
+    frame: false,
     transparent: true, 
     alwaysOnTop: true,
     width: 500,
     height: 400,
     resizable: false,
+    show: false,
   })
   win.loadURL(`file://${__dirname}/../templates/about.html`)
-  win.on('close', function () { win = null })
+  win.on('close', function () { win = null });
+  // win.setResizable(false);
   win.show();
 }
 

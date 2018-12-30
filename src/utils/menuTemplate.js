@@ -1,24 +1,36 @@
-const { app, Menu, shell } = require('electron');
-const settingsController = require('../controllers/settingsController');
+const { app, Menu, shell, ipcRenderer } = require('electron');
 const aboutController = require('../controllers/aboutController');
-const menu = [
+const Store = require('./store');
+const store = new Store();
+const lang = store.get('lang') || 'fr';
+const trans = require(`../mocks/trans_${lang}`);
+
+const menu = (window) => [
 {
     label: app.getName(),
     submenu: [
       {
+        label: trans.about || 'About',
+        click() {
+          aboutController.show();
+        }
+      },
+      {
         label: 'Preferences',
         accelerator: 'cmd+,', // shortcut
         click () {
-          settingsController.show();
+          // settingsController.show();
+          // event sent to render.js
+          window.webContents.send('open-settings')
         },
       },
     ]
   },
   {
-    label: 'Edit',
+    label: trans.edit || 'Edit',
     submenu: [
-      { label: 'Copy', role: 'copy'  },
-      { label: 'Paste', role:'paste'  },
+      { label: trans.copy || 'Copy', role: 'copy'  },
+      { label: trans.paste || 'Paste', role:'paste'  },
     ]
   },
   {
@@ -36,18 +48,12 @@ const menu = [
     ]
   },
   {
-    label: 'Help',
+    label: trans.help || 'Help',
     submenu: [
       {
-        label: 'Website',
+        label: trans.website || 'Website',
         click() {
           shell.openExternal('https://oesukam.github.io/bible');
-        }
-      },
-      {
-        label: 'About',
-        click() {
-          aboutController.show();
         }
       },
     ]

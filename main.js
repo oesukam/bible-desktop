@@ -1,5 +1,5 @@
 // Modules to control application life and create native browser window
-const {app, BrowserWindow, Menu } = require('electron');
+const {app, BrowserWindow, Menu, ipcMain } = require('electron');
 const menuTemplate = require('./src/utils/menuTemplate');
 const Store = require('./src/utils/store');
 
@@ -15,7 +15,7 @@ const store = new Store({
   defaults: {
     lang: 'fr',
     windowBounds,
-    bible: 'fr',
+    bible: 'french_bible',
     book: '1',
     chapter: '1',
     saved: {}
@@ -43,7 +43,7 @@ function createWindow () {
   // and load the index.html of the app.
   mainWindow.loadFile('index.html');
 
-  const menu = Menu.buildFromTemplate(menuTemplate)
+  const menu = Menu.buildFromTemplate(menuTemplate(mainWindow))
   Menu.setApplicationMenu(menu)
   // mainWindow.on('ready-to-show', () => {
   //   mainWindow.show();
@@ -87,7 +87,17 @@ app.on('activate', function () {
   if (mainWindow === null) {
     createWindow()
   }
+});
+
+ipcMain.on('close-model', (event, arg) => {
+  // Event sent to render.js
+  mainWindow.webContents.send('close-settings')
+});
+
+ipcMain.on("app-quit-and-install", (event, arg) => {
+  autoUpdater.quitAndInstall();
 })
 
-// In this file you can include the rest of your app's specific main process
-// code. You can also put them in separate files and require them here.
+ipcMain.on("app-reload", (event, arg) => {
+  mainWindow.reload();
+});
