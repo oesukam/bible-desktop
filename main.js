@@ -6,8 +6,9 @@ const Store = require('./src/utils/store');
 const windowBounds = {
   minWidth: 800,
   minHeight: 600,
-  transparent: true,
-  titleBarStyle: 'hidden'
+  frame: false,
+  titlebarAppearsTransparent: 'YES',
+  titleBarStyle: 'hidden',
 };
 
 let store = new Store();
@@ -19,11 +20,9 @@ let mainWindow
 function createWindow () {
   // initialize the store
   let lang = store.get('lang');
-  console.log('lang', lang)
   if (!lang) {
     lang = app.getLocale();
     lang = lang.replace(/-\S+/g, '');
-    console.log(lang)
     if (lang === 'en') {
       lang = 'en'
       store.set('lang', 'en');

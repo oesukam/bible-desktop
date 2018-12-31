@@ -28,15 +28,20 @@
     </div>
     <div id="top-bar">
       <div class="bible-name">Louis Second Bible</div>
-      <div>
-        <!-- <div id="search-content">
-            <i class="fa fa-search"></i>
-            <input type="text" class="search-input">      
+      <div class="top-bar__left">
+        <button class="btn-favorites"><i class="fa fa-star"></i></button>
+        <div class="favorites">
+          <div class="favorites-header">
+            <div class="search-container">
+              <i class="fa fa-search"></i>
+              <input id="filter-tag" type="text" class="search-input" placeholder="Filter tags">      
+            </div>
           </div>
-        </div> -->
-        <button class="favorite"><i class="fa fa-star"></i></button>
+          <div class="favorites-content">
+            <ul class="favorites-list"></ul>
+          </div>
+        </div>
       </div>
-      
     </div>
     <div id="title-bar"></div>    
     <div id="main">
@@ -53,7 +58,7 @@
         <h3 class="header-title">Settings</h3>
         <span class="close-model"></span>
       </div>
-      <div class="content">
+      <div class="settings-model__content">
         <table>
             <tbody>
               <tr>

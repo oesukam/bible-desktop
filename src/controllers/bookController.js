@@ -10,6 +10,8 @@ const chaptersContainer = document.querySelector('.side-chapters__list')
 const versesContainer = document.querySelector('.verses');
 const verseTitle = document.querySelector('.verse-title');
 const searchBook = document.querySelector('#search-books > .search-input');
+const favoritesList = document.querySelector('.favorites-list');
+const favoritesBtn = document.querySelector('.btn-favorites');
 
 let keywords = '';
 
@@ -46,9 +48,9 @@ const loadBooks = (search = '') => {
 const loadVerses = ({
   bookSelected = store.get('book'),
   chapterSelected = store.get('chapter') || '1',
-  loadChapters = false
+  loadChapters = false,
 } = {}) => {
-store = new Store();
+  store = new Store();
   const defaultBible = '../mocks/french_bible';
   const bible = require(`../mocks/${store.get('bible')}`) || require(defaultBible);
   const book = bible.books[bookSelected] || bible.books['1'];
@@ -123,8 +125,62 @@ window.verseTagClicked = function (entry) {
   showTagModel(entry);
 }
 
+/* Favorites */
+favoritesBtn.addEventListener('click', (e) => {
+  const favorites = document.querySelector('.favorites');
+  loadFavorites();
+  favorites.classList.toggle('open');
+});
 
+const loadFavorites = (search = '') => {
+  store = new Store();
+  const words = search.split(/\s+/g);
+  const favorites = store.get('favorites');
+  const bibleName = store.get('bible') || 'french_bible';
+
+  let favoritesArray = [];
+  let index = 1;
+  for(let key in favorites) {
+    const value = favorites[key];
+    const tags = value.tags || [];
+    const found = tags.find(val => {
+      return words.find(v => val.includes(v.toLocaleLowerCase()))
+    });
+    if (found || search === '') {
+      const refs = key.split('-');
+      const bookName = booksJSON[refs[0]] ? booksJSON[refs[0]][bibleName] : 'Tags'
+      favoritesArray.push(`
+        <div
+          class="favorite-block"
+          onclick="tagClicked('${key}')"
+        >
+          <div class="favorite-title">
+            ${bookName} ${refs[1]} : ${refs[2]}
+          </div>
+          <div class="favorite-tags">
+            <i class="fa fa-tags"></i> 
+            ${value.tags.map(val => `<span class="favorite-tag">${val}</span>`).join(' ')}
+          </div>
+        </div>
+      `);
+      index += 1;
+    }
+  }
+  favoritesList.innerHTML =  `${favoritesArray.join(' ')}`;
+}
+
+window.tagClicked = (key) => {
+  const entry = key.split('-');
+  loadVerses({
+    bookSelected: entry[0],
+    chapterSelected: entry[1],
+    loadChapters: true,
+  });
+  const favorites = document.querySelector('.favorites');
+  favorites.classList.remove('open');
+}
 module.exports = {
   loadBooks,
   loadVerses,
+  loadFavorites,
 };

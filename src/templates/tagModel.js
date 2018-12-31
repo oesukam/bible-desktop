@@ -15,7 +15,8 @@ let entry = param ? param[0] || '': '';
 let favorites = store.get('favorites');
 let input = '';
 let tags = favorites[entry] ? favorites[entry].tags || [] : [];
-const lang = store.get('lang') || 'fr';
+let allTags = store.get('tags') || [];
+const lang = store.get('bible') || 'french_bible';
 const refs = entry.split('-');
 const bookName = books[refs[0]] ? books[refs[0]][lang] : 'Tags'
 headerTitle.innerHTML = `${bookName} ${refs[1]} : ${refs[2]}`;
@@ -33,14 +34,23 @@ saveBtn.addEventListener('click', function (event) {
   }
   favorites[entry].tags = tags;
   store.set('favorites', favorites);
+  store.set('tags', allTags);
   window.close();
 });
 
 inputTag.addEventListener('keyup', (e) => {
-  const { value } = e.target;
+  let { value = '' } = e.target;
+  value = value.trim();
   if (e.keyCode === 13 && value && tags.length < 5) {
-    if (tags.indexOf(value.trim()) === -1) {
-      tags.push(value.trim());
+    if (tags.indexOf(value) === -1) {
+      tags.push(value);
+      const tag = allTags.find(tag => tag.tag === value);
+      if (tag) {
+        const index = allTags.indexOf(tag);
+        allTags[index] = { ...tag, checked: false, count: ++tag.count };
+      } else {
+        allTags.push({ tag: value, checked: false, count: 1 }); 
+      }
       renderTags(tags);
       e.target.value = '';
     }

@@ -11,8 +11,9 @@ const cancelBtn = document.querySelector('.btn-cancel');
 const saveBtn = document.querySelector('.btn-save');
 const Store = require('./src/utils/store');
 const store = new Store();
-const lang = store.get('lang') || 'fr';
-const trans = require(`./src/mocks/trans_${lang}`);
+
+const filterTag = document.querySelector('#filter-tag');
+
 
 const settingsModel = document.querySelector('.settings-model');
 const closeModel = document.querySelector('.close-model');
@@ -21,11 +22,19 @@ const settings = {
   lang: store.get('lang') || 'fr',
   bible: store.get('bible') || 'french_bible',
 }
-headerTitle.innerHTML = trans.settings;
-cancelBtn.innerHTML = trans.cancel;
-saveBtn.innerHTML = trans.save;
-langSelection.value = settings.lang;
-bibleSelection.value = settings.bible;
+
+const setLanguage = (locale = 'fr') => {
+  const lang = locale || store.get('lang') || 'fr';
+  const trans = require(`./src/mocks/trans_${lang}`);
+  headerTitle.innerHTML = trans.settings;
+  cancelBtn.innerHTML = trans.cancel;
+  saveBtn.innerHTML = trans.save;
+  filterTag.setAttribute('placeholder', trans.filter_tags);
+  langSelection.value = settings.lang;
+  bibleSelection.value = settings.bible;
+}
+
+setLanguage();
 
 bookController.loadBooks();
 bookController.loadVerses({ loadChapters: true });
@@ -42,9 +51,11 @@ closeModel.addEventListener('click', () => {
   ipcRenderer.send('close-model'); 
 })
 
+filterTag.addEventListener('input', (e) => {
+ bookController.loadFavorites(e.target.value);
+});
 
 /* Settings model */
-
 langSelection.addEventListener('change', (e) => {
   settings.lang = e.target.value;
 });
@@ -53,11 +64,12 @@ bibleSelection.addEventListener('change', (e) => {
   settings.bible = e.target.value;
 });
 
-cancelBtn.addEventListener('click', function (event) {
+cancelBtn.addEventListener('click', () => {
   ipcRenderer.send('close-model');
 });
 
-saveBtn.addEventListener('click', function (event) {
+saveBtn.addEventListener('click', () => {
+  setLanguage(settings.lang);
   store.set('lang', settings.lang);
   store.set('bible', settings.bible);
   bookController.loadBooks();
@@ -66,3 +78,6 @@ saveBtn.addEventListener('click', function (event) {
     ipcRenderer.send('close-model');
   }, 500);
 });
+
+
+

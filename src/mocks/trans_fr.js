@@ -1,6 +1,7 @@
 module.exports = {
   books: 'Livres',
   search: 'Recherche',
+  filter_tags: 'Filtrer les tags',
   preferences: 'Préférences',
   settings: 'Paramètres',
   edit: 'Editeur',
@@ -13,5 +14,5 @@ module.exports = {
   cancel: 'Annuler',
   save: 'Enregistrer',
   enter_tag: 'Entrer le tag',
-  thanks: '<strong>Remerciements:</strong> Prophète Didier HEREDI, Merveille KAZADI'
+  thanks: '<strong>Remerciements:</strong> Prophète Dieu Merci HERADI, Prophète Simon Bienfait ANSELME, Merveille KAZADI'
 }
