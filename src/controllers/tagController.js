@@ -1,6 +1,6 @@
-const { BrowserWindow } = require('electron');
+const electron = require('electron');
 const path = require('path');
-// const BrowserWindow = electron.remote.BrowserWindow;
+const BrowserWindow = electron.remote.BrowserWindow;
 
 const showTagModel = (entry = '') => {
   let win = new BrowserWindow({

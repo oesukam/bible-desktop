@@ -1,6 +1,7 @@
 module.exports = {
   books: 'Books',
   search: 'Search',
+  filter_tags: 'Filter tags',
   preferences: 'Preferences',
   settings: 'Settings',
   edit: 'Edit',
@@ -13,5 +14,5 @@ module.exports = {
   cancel: 'Cancel',
   save: 'Save',
   enter_tag: 'Enter tag',
-  thanks: '<strong>Thanks:</strong> Prophet Didier HEREDI, Merveille KAZADI'
+  thanks: '<strong>Thanks:</strong> Prophet Dieu Merci HERADI, Prophet Simon Bienfait ANSELME, Merveille KAZADI'
 }
