@@ -2,19 +2,11 @@
 A bible destop application in English and French with four different
 versions (English, French, Lingala and Swahili)
 
-## To Use
+## Home Window
+![Main window](/images/home.png)
 
-```bash
-# Clone this repository
-git clone https://github.com/oesukam/bible-desktop
-# Go into the repository
-cd bible-desktop
-# Install dependencies
-npm install
-# Run the app
-npm start
-```
+## Home Window with Tags
+![Main window](/images/home-tags.png)
 
-## License
-
-[CC0 1.0 (Public Domain)](LICENSE.md)
+## Settings Window
+![Main window](/images/setings.png)
