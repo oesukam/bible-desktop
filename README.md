@@ -9,4 +9,4 @@ versions (English, French, Lingala and Swahili)
 ![Main window](/images/home-tags.png)
 
 ## Settings Window
-![Main window](/images/setings.png)
+![Main window](/images/settings.png)
