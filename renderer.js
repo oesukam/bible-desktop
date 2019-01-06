@@ -37,7 +37,7 @@ const setLanguage = (locale = 'fr') => {
 setLanguage();
 
 bookController.loadBooks();
-bookController.loadVerses({ loadChapters: true });
+bookController.loadVerses();
 
 ipcRenderer.on('open-settings', (event , data) => { // when saved show notification on screen
   settingsModel.classList.add('open');
@@ -73,7 +73,7 @@ saveBtn.addEventListener('click', () => {
   store.set('lang', settings.lang);
   store.set('bible', settings.bible);
   bookController.loadBooks();
-  bookController.loadVerses({ loadChapters: true });
+  bookController.loadVerses();
   setTimeout(() => {
     ipcRenderer.send('close-model');
   }, 500);
