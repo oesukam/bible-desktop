@@ -12,7 +12,7 @@ const trans = require(`../mocks/trans_${lang}`);
 const { app } = remote
 appName.innerHTML = app.getName();
 appVersion.innerHTML = `Version: ${app.getVersion()}`;
-appCopyright.innerHTML = 'Copyright @ 2018, Olivier Esuka';
+appCopyright.innerHTML = 'Copyright @ 2018, Olivier Esuka <br><b>&ltoesukam@gmail.com&gt</b>';
 appThanks.innerHTML = trans.thanks;
 
 appContainer.addEventListener('click', function (event) {

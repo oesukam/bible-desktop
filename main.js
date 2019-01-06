@@ -1,14 +1,18 @@
 // Modules to control application life and create native browser window
 const {app, BrowserWindow, Menu, ipcMain } = require('electron');
+const path = require('path');
 const menuTemplate = require('./src/utils/menuTemplate');
 const Store = require('./src/utils/store');
 
-const windowBounds = {
+const windowDefault = {
   minWidth: 800,
   minHeight: 600,
   frame: false,
   titlebarAppearsTransparent: 'YES',
+  transparent: true,
   titleBarStyle: 'hidden',
+  show: false,
+  icon: path.join(__dirname, 'src/assets/icons/icon.png'),
 };
 
 let store = new Store();
@@ -39,7 +43,7 @@ function createWindow () {
       configName: 'user-preferences',
       defaults: {
         lang,
-        windowBounds,
+        windowDefault,
         saved: {}
       }
     });
@@ -47,13 +51,12 @@ function createWindow () {
   
   // Create the browser window.
   mainWindow = new BrowserWindow({
-    ...windowBounds,
+    ...windowDefault,
     ...store.get('windowBounds'),
   });
 
   function saveWindowBounds() {
     store.set('windowBounds', {
-      ...windowBounds,
       ...mainWindow.getBounds()
     });
   }
@@ -62,10 +65,11 @@ function createWindow () {
   mainWindow.loadFile('index.html');
 
   const menu = Menu.buildFromTemplate(menuTemplate(mainWindow))
-  Menu.setApplicationMenu(menu)
-  // mainWindow.on('ready-to-show', () => {
-  //   mainWindow.show();
-  // });
+  Menu.setApplicationMenu(menu);
+
+  mainWindow.once('ready-to-show', () => {
+    mainWindow.show();
+  });
 
   // listen to `resize` and `move` and save the settings
   mainWindow.on('resize', saveWindowBounds);

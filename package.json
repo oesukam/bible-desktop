@@ -1,15 +1,26 @@
 {
   "name": "bible",
+  "productName": "Bible",
   "version": "1.0.0",
-  "description": "Bible For Desktop",
+  "description": "Bible App",
   "main": "main.js",
+  "build": {
+    "nsis": {
+      "oneClick": true,
+      "perMachine": false,
+      "artifactName": "${productName}-Setup-${version}.${ext}"
+    }
+  },
   "scripts": {
     "start": "electron .",
     "dev": "webpack-dev-server --env.dev",
-    "build": "webpack",
-    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=src/assets/icons/icon.icns --prune=true --out=release-builds",
-    "package-win": "electron-packager . electron-tutorial-app --overwrite --asar=true --platform=win32 --arch=ia32 --icon=src/assets/icons/icon.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"CryptoApp\"",    
-    "package-linux": "electron-packager . electron-tutorial-app --overwrite --asar=true --platform=linux --arch=x64 --icon=src/assets/icons/icon.png --prune=true --out=release-builds"
+    "pack-mac": "electron-packager .  --overwrite --platform=darwin --arch=x64 --icon=src/assets/icons/icon.icns --prune=true --out=release-builds",
+    "pack-win": "electron-packager .  --overwrite --asar=true --platform=win32 --arch=ia32 --icon=src/assets/icons/icon.ico --prune=true --out=release-builds --version-string.CompanyName=oesukam --version-string.FileDescription=oesukam --version-string.ProductName=\"Bible\"",
+    "pack-linux": "electron-packager .  --overwrite --asar=true --platform=linux --arch=x64 --icon=src/assets/icons/icon.png --prune=true --out=release-builds",
+    "dmg": "create-dmg release-builds/Bible-darwin-x64/Bible.app release-builds/Bible-darwin-x64/ --exit 0",
+    "pack": "electron-builder --dir -mwl",
+    "dist": "electron-builder -mwl",
+    "build": "electron-builder"
   },
   "repository": "https://github.com/oesukam/bible-electron",
   "keywords": [
@@ -21,11 +32,10 @@
   "license": "CC0-1.0",
   "devDependencies": {
     "electron": "^3.0.7",
+    "electron-builder": "^20.38.4",
+    "electron-packager": "^13.0.1",
     "electron-reload": "^1.2.2",
     "webpack": "^3.10.0",
     "webpack-dev-server": "^2.9.7"
-  },
-  "dependencies": {
-    "electron-packager": "^13.0.1"
   }
 }

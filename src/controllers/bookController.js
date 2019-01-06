@@ -40,7 +40,7 @@ const loadBooks = (search = '') => {
       const bookSelected = e.target.getAttribute('data-index') || '1';
       store.set('book', bookSelected);
       store.set('chapter', '1');
-      loadVerses({ bookSelected, loadChapters: true });
+      loadVerses({ bookSelected });
     })
   });
 }
@@ -48,7 +48,6 @@ const loadBooks = (search = '') => {
 const loadVerses = ({
   bookSelected = store.get('book'),
   chapterSelected = store.get('chapter') || '1',
-  loadChapters = false,
 } = {}) => {
   store = new Store();
   const defaultBible = '../mocks/french_bible';
@@ -57,23 +56,28 @@ const loadVerses = ({
   const chapters = Object.keys(book.chapters) || [];
   verseTitle.innerHTML = `${book.book_name} ${chapterSelected}`;
   const verses = Object.values(book.chapters[chapterSelected] || book.chapters['1']);
-  if (loadChapters) {
-    bibleName.innerHTML = bible.bible_name;
-    store.set('bibleName', bible.bible_name);
-    chaptersContainer.innerHTML =  chapters.map((val, index) => {
-      const i = index + 1;
-      return `<li data-index="${i}" class="chapter">${val}</li>`
-    }).join(' ');
-  
-    const chapterElement = document.querySelectorAll('.side-chapters__list > .chapter') || [];
-    chapterElement.forEach((val) => {
-      val.addEventListener('click', (e) => {
-        const selected = e.target.getAttribute('data-index') || '1';
-        store.set('chapter', selected);
-        loadVerses({ chapterSelected: selected })
-      });
+  bibleName.innerHTML = bible.bible_name;
+  store.set('bibleName', bible.bible_name);
+  chaptersContainer.innerHTML =  chapters.map((val, index) => {
+    const i = index + 1;
+    return `
+      <li
+        data-index="${i}"
+        class="chapter${i === parseInt(chapterSelected) ? ' active' : ''}"
+      >
+        ${val}
+      </li>
+    `
+  }).join(' ');
+
+  const chapterElement = document.querySelectorAll('.side-chapters__list > .chapter') || [];
+  chapterElement.forEach((val) => {
+    val.addEventListener('click', (e) => {
+      const selected = e.target.getAttribute('data-index') || '1';
+      store.set('chapter', selected);
+      loadVerses({ chapterSelected: selected })
     });
-  }
+  });
   favorites = store.get('favorites') || {};
 
   versesContainer.innerHTML = verses.map((val, index) => {
@@ -174,7 +178,6 @@ window.tagClicked = (key) => {
   loadVerses({
     bookSelected: entry[0],
     chapterSelected: entry[1],
-    loadChapters: true,
   });
   const favorites = document.querySelector('.favorites');
   favorites.classList.remove('open');
