@@ -1,5 +1,9 @@
 module.exports = {
   books: 'Books',
+  yes: 'Yes',
+  no: 'No',
+  later: 'Later',
+  updateText: 'Do you want to update the App?',
   search: 'Search',
   filter_tags: 'Filter tags',
   preferences: 'Preferences',
@@ -7,6 +11,7 @@ module.exports = {
   edit: 'Edit',
   copy: 'Copy',
   paste: 'Paste',
+  quit: 'Quit',
   help: 'Help',
   website: 'Website',
   about: 'About',

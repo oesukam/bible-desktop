@@ -3,6 +3,7 @@
 // All of the Node.js APIs are available in this process.
 const { ipcRenderer, remote } = require('electron'); 
 const bookController = require('./src/controllers/bookController');
+const updateController = require('./src/controllers/updateController');
 const electron = require('electron');
 const headerTitle = document.querySelector('.header-title');
 const langSelection = document.querySelector('#language');
@@ -45,6 +46,10 @@ ipcRenderer.on('open-settings', (event , data) => { // when saved show notificat
 
 ipcRenderer.on('close-settings', (event , data) => { // when saved show notification on screen
   settingsModel.classList.remove('open');
+});
+
+ipcRenderer.on('update-ready', (event, text) => {
+  updateController.show();
 });
 
 closeModel.addEventListener('click', () => {

@@ -1,9 +1,13 @@
 // Modules to control application life and create native browser window
-const {app, BrowserWindow, Menu, ipcMain } = require('electron');
-const path = require('path');
+const { app, BrowserWindow, Menu, ipcMain, nativeImage } = require('electron');
+const { autoUpdater } = require("electron-updater");
 const menuTemplate = require('./src/utils/menuTemplate');
 const Store = require('./src/utils/store');
 
+// Reload the app if file changed
+if (process.env.NODE_ENV === 'dev') {
+  require('electron-reload')(__dirname);
+}
 const windowDefault = {
   minWidth: 800,
   minHeight: 600,
@@ -12,7 +16,7 @@ const windowDefault = {
   transparent: true,
   titleBarStyle: 'hidden',
   show: false,
-  icon: path.join(__dirname, 'src/assets/icons/icon.png'),
+  icon: __dirname + '/src/assets/icons/icon.png',
 };
 
 let store = new Store();
@@ -52,7 +56,7 @@ function createWindow () {
   // Create the browser window.
   mainWindow = new BrowserWindow({
     ...windowDefault,
-    ...store.get('windowBounds'),
+    ...store.get('windowounds'),
   });
 
   function saveWindowBounds() {
@@ -87,6 +91,8 @@ function createWindow () {
     // when you should delete the corresponding element.
     mainWindow = null
   });
+
+  if (process.env.NODE_ENV !== 'dev') autoUpdater.checkForUpdates();
 }
 
 // This method will be called when Electron has finished
@@ -109,6 +115,11 @@ app.on('activate', function () {
   if (mainWindow === null) {
     createWindow()
   }
+});
+
+// when the update has been downloaded and is ready to be installed, notify the BrowserWindow
+autoUpdater.on('update-downloaded', (info) => {
+  mainWindow.webContents.send('update-ready')
 });
 
 ipcMain.on('close-model', (event, arg) => {

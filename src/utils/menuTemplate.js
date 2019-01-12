@@ -45,6 +45,8 @@ const menu = (window) => {
             window.webContents.send('open-settings')
           },
         },
+        { type: 'separator' },
+        { label: `${trans.quit} Bible`, role: 'quit' },
       ]
     })
   };
