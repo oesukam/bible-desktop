@@ -1,5 +1,9 @@
 module.exports = {
   books: 'Livres',
+  yes: 'Oui',
+  no: 'Non',
+  later: 'Après',
+  updateText: 'Voulez vous mettre à jour l\'Application?',
   search: 'Recherche',
   filter_tags: 'Filtrer les tags',
   preferences: 'Préférences',
@@ -7,6 +11,7 @@ module.exports = {
   edit: 'Editeur',
   copy: 'Copier',
   paste: 'Coller',
+  quit: 'Quitter',
   help: 'Aide',
   website: 'Siteweb',
   about: 'A Propos',
