@@ -50,7 +50,8 @@
     "build": "electron-builder -mwl",
     "build:mac": "electron-builder -m",
     "build:win": "electron-builder -w",
-    "build:lin": "electron-builder -l"
+    "build:lin": "electron-builder -l",
+    "ship": "electron-builder -mwl -p always"
   },
   "repository": "https://github.com/oesukam/bible-desktop",
   "keywords": [

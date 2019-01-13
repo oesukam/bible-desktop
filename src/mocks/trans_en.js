@@ -3,6 +3,7 @@ module.exports = {
   yes: 'Yes',
   no: 'No',
   later: 'Later',
+  update: 'Update',
   updateText: 'Do you want to update the App?',
   search: 'Search',
   filter_tags: 'Filter tags',

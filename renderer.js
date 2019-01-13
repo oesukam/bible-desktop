@@ -49,6 +49,7 @@ ipcRenderer.on('close-settings', (event , data) => { // when saved show notifica
 });
 
 ipcRenderer.on('update-ready', (event, text) => {
+  console.log('yeahh')
   updateController.show();
 });
 

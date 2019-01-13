@@ -1,5 +1,5 @@
-const { BrowserWindow } = require('electron');
-const path = require('path');
+const electron = require('electron');
+const BrowserWindow = electron.remote.BrowserWindow;
 const Store = require('../utils/store');
 const store = new Store();
 const lang = store.get('lang') || 'fr';
@@ -16,7 +16,7 @@ const show = () => {
       show: false,
       minimizable: false,
       maximizable: false,
-      title: trans.update || 'Uodate'
+      title: trans.update || 'Update'
     });
     win.loadURL(`file://${__dirname}/../templates/update.html`)
     win.on('close', function () { win = null });
