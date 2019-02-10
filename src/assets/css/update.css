@@ -9,6 +9,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  -webkit-user-select: none;
 }
 html, body {
   height: 100%;
@@ -42,7 +43,7 @@ body{
 }
 
 .app-logo {
-  width: 130px;
+  width: 80px;
   object-fit: contain;
   margin-bottom: 15px;
 }
@@ -51,7 +52,40 @@ body{
   text-align: center;
   margin-top: 10px;
 }
-.app-thanks {
-  margin: 20px 10px;
+.update-text {
+  padding: 20px;
   text-align: center;
+  font-size: 18px;
+}
+.update-buttons {
+  display: flex;
+  padding: 0 20px;
+  width: 100%;
+}
+
+button {
+  outline: none;
+  padding: 10px;
+  margin: 20px;
+  flex: 1;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  flex: 1;
+  -o-border-radius: 5px;
+  text-transform: uppercase;
+  font-size: 16px;
+  color: rgb(87, 86, 86);
+  background-color: #fcfcfc;
+  background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0,#fcfcfc),color-stop(100%,#f1f1f1));
+  background-image: -webkit-linear-gradient(top,#fcfcfc 0,#f1f1f1 100%);
+  background-image: linear-gradient(to bottom,#fcfcfc 0,#f1f1f1 100%);
+  border-color: #c2c0c2 #c2c0c2 #a19fa1;
+}
+.cancel {
+  /* background-color: rgba(0,0,0,.4); */
+}
+.update {
+  background-color: rgba(0,0,0,.4);
 }

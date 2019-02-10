@@ -2,7 +2,7 @@ node_modules
 release-builds
 dist/
 package/
-
+electron-builder.yml
 # Logs
 logs
 *.log

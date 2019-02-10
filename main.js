@@ -119,7 +119,7 @@ app.on('activate', function () {
 
 // when the update has been downloaded and is ready to be installed, notify the BrowserWindow
 autoUpdater.on('update-downloaded', (info) => {
-  mainWindow.webContents.send('update-ready')
+  mainWindow.webContents.send('update-ready');
 });
 
 ipcMain.on('close-model', (event, arg) => {
