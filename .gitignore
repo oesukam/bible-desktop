@@ -3,3 +3,5 @@ release-builds
 dist/
 package/
 src/
+electron-builder.yml
+yarn-error.log
