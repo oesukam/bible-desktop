@@ -12,8 +12,7 @@
   "build": {
     "appId": "com.oesukam.bible-desktop",
     "nsis": {
-      "oneClick": true,
-      "perMachine": false,
+      "oneClick": false,
       "artifactName": "${productName}-Setup-${version}.${ext}",
       "allowToChangeInstallationDirectory": true
     },
