@@ -4,12 +4,13 @@
 const { ipcRenderer, remote } = require('electron'); 
 const bookController = require('./src/controllers/bookController');
 const updateController = require('./src/controllers/updateController');
-const electron = require('electron');
+const donateController = require('./src/controllers/donateController');
 const headerTitle = document.querySelector('.header-title');
 const langSelection = document.querySelector('#language');
 const bibleSelection = document.querySelector('#bible');
 const cancelBtn = document.querySelector('.btn-cancel');
 const saveBtn = document.querySelector('.btn-save');
+const donateBtn = document.querySelector('.btn-donate');
 const Store = require('./src/utils/store');
 const store = new Store();
 
@@ -54,7 +55,7 @@ ipcRenderer.on('update-ready', (event, text) => {
 
 closeModel.addEventListener('click', () => {
   ipcRenderer.send('close-model'); 
-})
+});
 
 filterTag.addEventListener('input', (e) => {
  bookController.loadFavorites(e.target.value);
@@ -84,5 +85,8 @@ saveBtn.addEventListener('click', () => {
   }, 500);
 });
 
-
+/* Donation */
+donateBtn.addEventListener('click', () => {
+  donateController.show(); 
+});
 

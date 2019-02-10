@@ -5,19 +5,12 @@
   -webkit-user-select: none;
 }
 
-.top-bar__left {
-  position: relative;
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-}
-
 #top-bar{
   top: 0;
   bottom: 0;
   right: 0;
   height: 60px;
-  left: 248px;
+  left: 247px;
   background-color:#F7F7F7;
   border-bottom: 1px solid #e2dde4;  
   border-right: 1px solid #ebe6ee;    
@@ -27,6 +20,13 @@
   justify-content: space-between;
   align-items: center;
   padding: 15px;
+}
+
+.top-bar__right {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .search-container {
@@ -53,9 +53,22 @@
   font-size: 12px;
 }
 
+.btn-donate {
+  font-size: 25px;
+  display: flex;
+  align-items: center;
+  background: none;
+  color: #7e7e7e;
+}
+
+.btn-donate i {
+  margin-right: 5px;
+}
+
 .btn-favorites {
   font-size: 25px;
   color: green;
+  background: none;
 }
 
 .favorites {
