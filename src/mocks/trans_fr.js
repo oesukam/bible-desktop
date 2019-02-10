@@ -20,5 +20,6 @@ module.exports = {
   cancel: 'Annuler',
   save: 'Enregistrer',
   enter_tag: 'Entrer le tag',
-  thanks: '<strong>Remerciements:</strong> Prophète Dieu Merci HERADI, Prophète Simon Bienfait ANSELME, Merveille KAZADI'
+  thanks: '<strong>Remerciements:</strong> Prophète Dieu Merci HERADI, Prophète Simon Bienfait ANSELME, Merveille KAZADI',
+  donate: 'Faire un don'
 }

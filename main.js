@@ -56,7 +56,7 @@ function createWindow () {
   // Create the browser window.
   mainWindow = new BrowserWindow({
     ...windowDefault,
-    ...store.get('windowounds'),
+    ...store.get('windowounds')
   });
 
   function saveWindowBounds() {
