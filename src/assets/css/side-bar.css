@@ -74,6 +74,12 @@
   margin-bottom: 0;
   color: rgb(133, 133, 133);
 }
+.side-bar__book {
+  color: #9c9c9c;
+}
+.side-bar__book.active {
+  color: #f7f7f7;
+}
 .chapter.active {
   color: rgb(255, 255, 255);
 }
