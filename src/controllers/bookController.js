@@ -23,14 +23,15 @@ const loadBooks = (search = '') => {
   keywords = search;
   store = new Store();
   const bible = store.get('bible') || 'french_bible';
+  const bookSelected = store.get('book');
   booksNamesContainer.innerHTML =  books.map((val, index) => {
     const i = index + 1;
     if (keywords) {
       if (val[bible].toLowerCase().includes(keywords.toLocaleLowerCase())) {
-        return `<li data-index="${i}" class="side-bar__book">${val[bible] || val.french_bible}</li>` 
+        return `<li data-index="${i}" class="side-bar__book${bookSelected == i ? ' active': ''}">${val[bible] || val.french_bible}</li>` 
       }
     } else {
-      return `<li data-index="${i}" class="side-bar__book">${val[bible] || val.french_bible}</li>`
+      return `<li data-index="${i}" class="side-bar__book${bookSelected == i ? ' active': ''}">${val[bible] || val.french_bible}</li>`
     }
   }).join(' ');
 
@@ -38,6 +39,8 @@ const loadBooks = (search = '') => {
   bookElement.forEach((val) => {
     val.addEventListener('click', (e) => {
       const bookSelected = e.target.getAttribute('data-index') || '1';
+      bookElement.forEach((b) => b.classList.remove('active'))
+      e.target.classList.add('active');
       store.set('book', bookSelected);
       store.set('chapter', '1');
       loadVerses({ bookSelected });
