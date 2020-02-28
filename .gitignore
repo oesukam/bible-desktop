@@ -13,3 +13,4 @@ yarn-error.log*
 // osx garbage
 *.DS_Store
 .DS_Store
+.swp
