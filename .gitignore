@@ -5,3 +5,15 @@ package/
 src/
 electron-builder.yml
 yarn-error.log
+electron-builder.yml
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+// osx garbage
+*.DS_Store
+.DS_Store
+.swp

@@ -1,0 +1,4 @@
+appId: com.oesukam.bible-desktop
+publish:
+  provider: github
+  token: $$YOURTOKEN$$
