@@ -67,7 +67,7 @@
     "electron-builder": "^20.38.4",
     "electron-packager": "^13.0.1",
     "electron-reload": "^1.2.2",
-    "webpack": "^3.10.0",
+    "webpack": "^5.75.0",
     "webpack-dev-server": "^2.9.7"
   },
   "dependencies": {
